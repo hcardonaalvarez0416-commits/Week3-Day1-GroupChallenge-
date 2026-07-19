@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Group Challenge</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 20px; }
+        .recipe-box { border: 2px solid #333; padding: 20px; max-width: 400px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>Daily Recipe Challenge</h1>
+    <div id="recipe-display" class="recipe-box">
+        
+    </div>
+
+    <script>
+        // 1. VARIABLE:  "Noon" or "Sunset" 
+        var timeOfDay = "Noon"; 
+
+        // 2. FUNCTIONS: Defining the two recipe procedures
+        function displayLunch() {
+            var lunchHtml = `
+                <h2>Lunch: Simple Turkey Sandwich</h2>
+                <ol>
+                    <li>Lay out two slices of whole wheat bread.</li>
+                    <li>Spread mayonnaise and mustard evenly on one side.</li>
+                    <li>Layer three slices of turkey breast on the bread.</li>
+                    <li>Add a leaf of lettuce and two slices of tomato.</li>
+                    <li>Close the sandwich, cut diagonally, and serve.</li>
+                </ol>
+            `;
+            document.getElementById("recipe-display").innerHTML = lunchHtml;
+        }
+
+        function displayDinner() {
+            var dinnerHtml = `
+                <h2>Dinner: Quick Garlic Pasta</h2>
+                <ol>
+                    <li>Boil a pot of salted water and cook pasta for 9 minutes.</li>
+                    <li>Slice three cloves of garlic thinly while pasta cooks.</li>
+                    <li>Heat olive oil in a pan over medium heat and sauté garlic.</li>
+                    <li>Drain the pasta and toss it directly into the garlic oil.</li>
+                    <li>Top with parmesan cheese and fresh black pepper.</li>
+                </ol>
+            `;
+            document.getElementById("recipe-display").innerHTML = dinnerHtml;
+        }
+
+        // 3. DECISION MAKING: Testing the variable using a conditional statement
+        if (timeOfDay === "Noon") {
+            displayLunch();
+        } else if (timeOfDay === "Sunset") {
+            displayDinner();
+        } else {
+            document.getElementById("recipe-display").innerHTML = "<p>No recipe scheduled for this time.</p>";
+        }
+    </script>
+
+</body>
+</html>
